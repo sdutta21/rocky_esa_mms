@@ -4,13 +4,13 @@
 %
 clear all close all 
 
-l = 0.4;
+l = 0.4822;
 g = 9.8;
 
 
 % motor
 kmotor = .0025;
-tau = .05;
+tau = .103;
 
 
 % pole = 10;
