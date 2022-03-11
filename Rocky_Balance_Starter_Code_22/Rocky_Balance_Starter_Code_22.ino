@@ -86,8 +86,8 @@ void BalanceRocky()
 
     // **************Enter the control parameters here
     
-    float Kp = 0;
-    float Ki = 0;
+    float Kp = 1.4;
+    float Ki = 5.5;
 
     float Ci = 0;
     
