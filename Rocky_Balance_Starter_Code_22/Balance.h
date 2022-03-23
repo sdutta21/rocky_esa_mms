@@ -19,7 +19,7 @@ const int16_t GEAR_RATIO = 161;
 //
 // If you want to use speeds faster than 300, you should add
 // the line "motors.allowTurbo(true);" to setup().
-const int16_t MOTOR_SPEED_LIMIT = 300;
+const int16_t MOTOR_SPEED_LIMIT = 200;
 
 // This constant relates the angle to its rate of change for a
 // robot that is falling from a nearly-vertical position or
@@ -137,6 +137,3 @@ void balanceResetEncoders();
 
 
 void integrateEncoders();
-
-
-
