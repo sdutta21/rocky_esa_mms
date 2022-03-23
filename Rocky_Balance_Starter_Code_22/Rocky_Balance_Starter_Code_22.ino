@@ -86,8 +86,8 @@ void BalanceRocky()
 
     // **************Enter the control parameters here
     
-    float Kp = 1010;
-    float Ki = 77400;
+    float Kp = 1739;
+    float Ki = 8132;
 
     float Ci = 0;
     
@@ -109,7 +109,7 @@ void BalanceRocky()
    // dist_accum - integral of the distance
 
    // *** enter an equation for v_d in terms of the variables available ****
-    v_d =  // (Kp*angle_rad)+(Ki*angle_rad_accum); // this is the desired velocity from the angle controller 
+    v_d = (Kp*angle_rad)+(Ki*angle_rad_accum); // this is the desired velocity from the angle controller 
       
 
   // The next two lines implement the feedback controller for the motor. Two separate velocities are calculated. 
@@ -119,8 +119,8 @@ void BalanceRocky()
   // right to left. This helps ensure that the Left and Right motors are balanced
 
   // *** enter equations for input signals for v_c (left and right) in terms of the variables available ****
-    v_c_R =  //v_d-(Jp*measured_speedR)-(Ji*distRight_m)-(Ci*dist_accum)
-    v_c_L =  //v_d-(Jp*measured_speedL)-(Ji*distLeft_m)-(Ci*dist_accum)      
+    v_c_R =  v_d-(Jp*measured_speedR)-(Ji*distRight_m)-(Ci*dist_accum);
+    v_c_L =  v_d-(Jp*measured_speedL)-(Ji*distLeft_m)-(Ci*dist_accum);      
 
 
 
@@ -128,8 +128,8 @@ void BalanceRocky()
 
 
     // save desired speed for debugging
-    desSpeedL = v_c_L;
-    desSpeedR = v_c_R;
+    desSpeedL = v_c_R;
+    desSpeedR = v_c_L;
 
     // the motor control signal has to be between +- 300. So clip the values to be within that range 
     // here
